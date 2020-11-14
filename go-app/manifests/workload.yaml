@@ -1,0 +1,91 @@
+---
+apiVersion: v1
+data:
+  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJnaXRsYWIuZGlnaXRhbGluZm8ubmwiOiB7fSwKCQkiaHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEvIjoge30sCgkJInJlZ2lzdHJ5LmRpZ2l0YWxpbmZvLm5sIjoge30KCX0sCgkiSHR0cEhlYWRlcnMiOiB7CgkJIlVzZXItQWdlbnQiOiAiRG9ja2VyLUNsaWVudC8xOS4wMy4xMyAoZGFyd2luKSIKCX0sCgkiY3JlZHNTdG9yZSI6ICJkZXNrdG9wIiwKCSJleHBlcmltZW50YWwiOiAiZGlzYWJsZWQiLAoJInN0YWNrT3JjaGVzdHJhdG9yIjogInN3YXJtIgp9
+kind: Secret
+metadata:
+  name: regcred
+  namespace: go-app
+type: kubernetes.io/dockerconfigjson
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: go-app
+    app: kubeapp
+    env: canary
+  name: go-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: go-app
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: go-app
+    spec:
+      containers:
+      - name: go-app
+        image: registry.digitalinfo.nl/digital-info/rancher/go-app:v2.1
+        args:
+        - run 
+        - /home/app/app.go
+        command:
+        - go
+        ports:
+        - name: http
+          containerPort: 8080
+        readinessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 10
+          periodSeconds: 2
+          successThreshold: 2
+          timeoutSeconds: 2
+        livenessProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 180
+          periodSeconds: 2
+          successThreshold: 1
+          timeoutSeconds: 2
+      imagePullSecrets:
+      - name: regcred
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: go-app
+  labels:
+    app.kubernetes.io/name: go-app
+spec:
+  selector:
+    app.kubernetes.io/name: go-app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+      name: http
+---
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+    name: go-app
+spec:
+    rules:
+    - host: app.digitalinfo.nl
+      http:
+        paths:
+        - path: /
+          pathType: ImplementationSpecific
+          backend:
+            serviceName: go-app
+            servicePort: 8080

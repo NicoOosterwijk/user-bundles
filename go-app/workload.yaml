@@ -18,7 +18,7 @@ spec:
       - name: go-app
         image: registry.digitalinfo.nl/digital-info/rancher/go-app:v2.1
         ports:
-        - name: web
+        - name: http
           containerPort: 8080
 ---
 apiVersion: v1
@@ -34,7 +34,7 @@ spec:
     - protocol: TCP
       port: 8080
       targetPort: 8080
-      name: web
+      name: http
 ---
 apiVersion: networking.k8s.io/v1beta1
 kind: Ingress

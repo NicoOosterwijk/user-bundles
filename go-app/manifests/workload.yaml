@@ -1,13 +1,4 @@
 ---
-apiVersion: v1
-data:
-  .dockerconfigjson: ewoJImF1dGhzIjogewoJCSJnaXRsYWIuZGlnaXRhbGluZm8ubmwiOiB7fSwKCQkiaHR0cHM6Ly9pbmRleC5kb2NrZXIuaW8vdjEvIjoge30sCgkJInJlZ2lzdHJ5LmRpZ2l0YWxpbmZvLm5sIjoge30KCX0sCgkiSHR0cEhlYWRlcnMiOiB7CgkJIlVzZXItQWdlbnQiOiAiRG9ja2VyLUNsaWVudC8xOS4wMy4xMyAoZGFyd2luKSIKCX0sCgkiY3JlZHNTdG9yZSI6ICJkZXNrdG9wIiwKCSJleHBlcmltZW50YWwiOiAiZGlzYWJsZWQiLAoJInN0YWNrT3JjaGVzdHJhdG9yIjogInN3YXJtIgp9
-kind: Secret
-metadata:
-  name: regcred
-  namespace: go-app
-type: kubernetes.io/dockerconfigjson
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -28,12 +19,7 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: registry.digitalinfo.nl/digital-info/rancher/go-app:v2.1
-        args:
-        - run 
-        - /home/app/app.go
-        command:
-        - go
+        image: docker.io/nokkie/go-app:canary
         ports:
         - name: http
           containerPort: 8080

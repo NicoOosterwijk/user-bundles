@@ -5,7 +5,7 @@ metadata:
   labels:
     app.kubernetes.io/name: go-app
     app: kubeapp
-    env: canary
+    env: production
   name: go-app
 spec:
   replicas: 1
@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: go-app
-        image: docker.io/nokkie/go-app:canary
+        image: docker.io/nokkie/go-app:production
         ports:
         - name: http
           containerPort: 8080

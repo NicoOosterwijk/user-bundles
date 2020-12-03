@@ -1,0 +1,22 @@
+---
+stages:
+  - re-deploy
+
+variables:
+  DOCKER_HOST: tcp://localhost:2375
+  DOCKER_TLS_CERTDIR: ""
+  DOCKER_DRIVER: overlay2
+  
+re-deploy:
+  # script:
+  #   - docker login -u ${DEPLOY_USER} -p ${DEPLOY_PASSWORD} registry.digitalinfo.nl
+  image: registry.digitalinfo.nl/digital-info/rpi-cluster/kubectl-docker:latest
+  stage: re-deploy
+  tags:
+    - rpi
+  script:
+    - 'kubectl -n simple-nginx patch deployment simple-nginx -p "{\"spec\": {\"template\": {\"metadata\": { \"labels\": { \"redeploy\": \"$(date +%s)\"}}}}}"'
+  only:
+    changes:
+      - index.html
+

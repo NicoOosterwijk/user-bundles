@@ -32,7 +32,7 @@ spec:
         args:
         - git 
         - clone
-        - http://gitlab.digitalinfo.nl/generic/simple-nginx.git 
+        - https://gitlab.digitalinfo.nl/generic/simple-nginx.git 
         - /usr/share/nginx/html
         securityContext:
           runAsUser: 1 

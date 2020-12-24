@@ -5,11 +5,11 @@ metadata:
   namespace: simple-nginx
 spec:
   rules:
-  - host: simple-nginx.digitalinfo.nl
+  - host: www.k-a-a-s.nl
     http:
       paths:
       - backend:
-          serviceName: simple-nginx
+          serviceName: simple-nginx-svc
           servicePort: 80
         path: /
         pathType: ImplementationSpecific

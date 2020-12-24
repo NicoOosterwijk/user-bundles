@@ -41,6 +41,8 @@ spec:
         volumeMounts:
           - name: html
             mountPath: /usr/share/nginx/html
+      imagePullSecrets:
+      - name: regcred
       containers:
       - image: registry.digitalinfo.nl/generic/simple-nginx:v1.2
         imagePullPolicy: Always

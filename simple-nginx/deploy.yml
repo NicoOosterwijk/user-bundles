@@ -41,8 +41,8 @@ spec:
         volumeMounts:
           - name: html
             mountPath: /usr/share/nginx/html
-      imagePullSecrets:
-      - name: regcred
+      #imagePullSecrets:
+      #- name: regcred
       containers:
       ###- image: registry.digitalinfo.nl/digital-info/rpi-cluster/simple-nginx:v1.2
       - image: nokkie/simple-nginx:stable

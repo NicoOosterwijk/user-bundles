@@ -44,7 +44,7 @@ spec:
       imagePullSecrets:
       - name: regcred
       containers:
-      - image: registry.digitalinfo.nl/generic/simple-nginx:v1.2
+      - image: registry.digitalinfo.nl/digital-info/rpi-cluster/simple-nginx:v1.2
         imagePullPolicy: Always
         livenessProbe:
           failureThreshold: 3

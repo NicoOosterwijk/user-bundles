@@ -26,7 +26,7 @@ spec:
         app: simple-nginx
       name: simple-nginx
     spec:
-      initContainers:
+      Containers:
       - name: git-clone
         image: nokkie/alpinegit:arm64
         args:
@@ -41,7 +41,7 @@ spec:
         volumeMounts:
           - name: html
             mountPath: /usr/share/nginx/html
-      containers:
+      #containers:
       - image: nokkie/simple-nginx:stable
         imagePullPolicy: Always
         livenessProbe:

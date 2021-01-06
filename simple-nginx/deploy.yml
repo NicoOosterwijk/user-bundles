@@ -83,4 +83,6 @@ spec:
           readOnly: true
       volumes:
       - name: html
-        emptyDir: {}
+        #emptyDir: {}
+        configMap:
+          name: html-file

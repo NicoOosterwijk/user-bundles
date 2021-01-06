@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welkom bij K-A-A-S!</title>
+<style>
+body {
+background-color: #FFF;
+width: 80%;
+margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif;
+</style>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+	background-color: #4CAF50;
+}
+.button2 {
+	background-color: #008CBA;
+}
+.button1:hover {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+</head>
+<body>
+	<div align="center">
+		<marquee behavior="alternate" bgcolor="#bb3434" direction="left" height:="" 
+		loop="7" scrollamount="1" scrolldelay="2" width="100%">
+		<span style="font-size: 20px;color:#FFFFFF">
+		Dit is een demo-site en dient uitsluitend ter illustratie van een Kubernetes project. Reacties over en via deze website worden genegeerd!</span></marquee>
+	 </div>
+	<center>
+    <h1>Welkom bij K-A-A-S Technologies!</h1>
+    <hr>
+		<p><img src="images/k8s-logo.png" align="center"></p>
+		<p>Kubernetes As A Service</p>
+  </center>
+	<p>
+		K-A-A-S Technologies is waar u de Kubernetes-expert vindt. Bedrijven die de overstap maken naar containerized applicaties voor hun 'mission-critical' projecten, kiezen voor K-A-A-S Technologies.<br/>
+		<center><button class="button button1" name="ask1" type="submit" formmethod="post">Vraag de expert!</button></center>
+	</p>
+	<p>
+		<h4><i>Over K-A-A-S Technologies:</i></h4>
+	</p>
+	<p>
+		K-A-A-S Technologies wordt gedreven door <a href="https://www.linkedin.com/in/noosterwijk/" target="_new">Nico Oosterwijk</a> en hij is gecertificeert in meerdere disciplines op het gebied van Cloud Services, Kubernetes en Continuous Deployments.
+	</p>
+  <p><center>
+		<table width="75%" border="0">
+			<tr>
+				<td align="center" valign="middle" width="25%">
+					<img src="images/LF.png" width="100"><br/><font size="1">Monitoring Systems and Services with Prometheus</font>
+				</td>
+				<td align="center" valign="middle" width="25%">
+					<img src="images/LF.png" width="100"><br/><font size="1">Service Mesh Fundamentals</font>
+				</td>
+				<td align="center" valign="middle" width="25%">
+					<img src="images/LF.png" width="100"><br/><font size="1">Managing Kubernetes Applications with Helm</font>
+				</td>
+				<td align="center" valign="middle" width="25%">
+					<img src="images/LF.png" width="100"><br/><font size="1">Native Logging with Fluentd</font>
+				</td>
+			</tr>
+			<tr>
+				<td align="center" valign="middle" width="25%" valign="bottom">
+					<br/><img src="images/gitlab.png" width="100"><br/><font size="1">GitLab CI/CD</font>
+				</td>
+				<td align="center" valign="middle" width="25%" valign="bottom">
+					<br/><img src="images/RancherCertified.png" width="100"><br/><font size="1">Certified Rancher Operator</font>
+				</td>
+				<td align="center" valign="middle" width="25%" valign="bottom">
+					<img src="images/CKAD.png" width="100"><br/><font size="1">Certified Kubernetes Application Developer</font>
+				</td>
+				<td align="center" valign="middle" width="25%" valign="bottom">
+					<img src="images/AZ104.png" width="100"><br/><font size="1">Azure Administrator Associate</font>
+				</td>
+			</tr>
+		</table>
+		<button class="button button1" name="ask2">Meer weten?</button></center>
+		</center></p>
+		<p>
+			<center>
+				<h4><i>Managing</i></h4>
+				<img src="images/management.png" border="0" width="800">
+			</center>
+		</p>
+		<p>&nbsp;</p>
+		<p>
+			<center>
+				<h4><i>Deploying</i></h4>
+				<img src="images/deploying.png" border="0" width="800">
+			</center>
+		</p>
+		<p>&nbsp;</p>
+		<p>
+			<center>
+				<h4><i>Monitoring</i></h4>
+				<img src="images/monitoring.png" border="0" width="800">
+			</center>
+		</p>
+		<p>
+		 <center><button class="button button1" name="ask3">Neem contact op!</button></center>
+		</p>
+		<hr>
+		<p>
+			<h4><i>Over dit 'K-A-A-S Technologies' project:</i></h4>
+			De <a href="https://kubernetes.io/" target="_new">#Kubernetes</a> cluster draait op een aantal <a href="https://www.raspberrypi.org/products/" target="_new">#Raspberry Pi</a> computers. Deze RPi's draaien met <a href="https://ubuntu.com/download/server/arm" target="_new">#Ubuntu 20.04</a> als OS en daarop is <a href="https://k3s.io/" target="_new">#K3S</a> ge&iuml;nstalleerd. <a href="http://www.digitalinfo.nl/raspberry-pi/kubernetes-cluster-via-k3s/" target="_new>">Het bouwen van deze cluster is hier na te lezen.</a><br/>
+			<br/>
+			Het <b>management</b> van het cluster wordt gedaan met behulp van <a href="https://rancher.com/" target="_new">#Rancher 2.5.x</a>. Hiervoor zijn 3 virtuele machines gemaakt op <a href="https://www.proxmox.com/en/proxmox-ve" target="_new">#Proxmox VE</a> en deze maken gebruik van <a href="https://rancher.com/docs/os/v1.x/en/overview/" target="_new">#RancherOS</a>. <a href="http://www.digitalinfo.nl/rancher/rancher-lab-met-rancheros/" target="_new">Hoe je Rancher Management kunt installeren is hier te lezen.</a> Nieuwe clusters kunnen hierin toegevoegd worden met behulp van de <b>'Cluster Manager'</b>, instructies worden dan op het scherm weergegeven.<br/>
+			<br/>
+			De inhoud van deze website is ondergebracht in een <a href="https://git-scm.com/" target="_new">#GIT</a> repository in de <a href="https://gitlab.digitalinfo.nl/generic/simple-html" target="_new">#Digital Info Repositories</a> (DIR) voor versie beheer. Wijzigen van de repository is voorbehouden aan de members van het project.<br/>
+			<br/>
+			Een tweede repository, ditmaal op <a href="https://github.com/" target="_new">#GitHub</a>, bevat de manifests om de nginx-deployment uit te voeren, hier een service aan te koppelen en met een ingress een hostname (URL) toe te kennen aan de service op TCP port 80 (http). Deze deployment zal de html-repo als volume mounten, zie de technische uitleg hieronder. Je vindt deze nginx-deployment in deze repo: <a href="https://github.com/NicoOosterwijk/user-bundles/tree/rpi/simple-nginx" target="_new">simple-nginx</a> en bestaat uit:
+			<ul>
+				<li>deploy.yml</li>
+				<li>ingress.yml</li>
+				<li>service.yml</li>
+			</ul>
+			<br/>
+			Om nu de website op een eenvoudige manier te kunnen <i>'deployen'</i> wordt een Rancher Project toegevoegd aan de Raspberry Pi cluster. Met behulp van de vernieuwde <b>'Continuous Delivery'</b> van Rancher 2.5 wordt een <i>'Git Repo'</i> toegekend aan het cluster. De <b>'Fleet Agent'</b> <i>'pulled'</i> deze repo en <i>pushed</i> het naar de RPi cluster. <a href="http://www.digitalinfo.nl/rancher/continuous-delivery-in-rancher-2-5/" target="_new">Meer details over deze deployment-manier lees je hier.</a><br/>
+			<br/>
+			<center>
+				<img src="images/gitrepo.png" width="750" border="0">
+			</center>
+
+
+
+			<pre>## BEGIN: voor de technische lezer ##</pre>
+			Een zogenaamde <i>'initContainer'</i> zal de eerder genoemde Git-repository met de website 'clonen' en in een 'volume' plaatsen zodat de 'nginx-container' dit 'volume' als bron kan gebruiken voor de html-pagina. De manifest voor de <i>'initContainer'</i> ziet er alsvolgt uit:
+			<pre>
+initContainers:
+- name: git-clone
+  image: nokkie/alpinegit:arm64
+  args:
+  - git 
+  - clone
+  - https://gitlab.digitalinfo.nl/generic/simple-html.git
+  - /usr/share/nginx/html
+  volumeMounts:
+  - name: html
+    mountPath: /usr/share/nginx/html
+			</pre>
+			De nginx-deployment is ondergebracht in de manifest als 'container' en deze maakt dan gebruik van hetzelfde volume als de initContainer. Dit ziet er alsvolgt uit:
+			<pre>
+containers:
+- image: nokkie/simple-nginx:stable
+  name: simple-nginx
+  volumeMounts:
+  - mountPath: /usr/share/nginx/html
+    name: html
+    readOnly: true
+  volumes:
+  - name: html
+    emptyDir: {}
+			</pre>
+			Verder zijn hier dan ook de namespace, service en ingress manifests in ondergebracht zodat de website bereikbaar is via <a href="#">www.k-a-a-s.nl</a><br/>
+			<br/>
+			De nginx-image is gemaakt aan de hand van de volgende 'Dockerfile':
+			<pre>
+FROM nginx
+
+LABEL Name=simple-nginx Version=v1.0 Maintainer="Nico Oosterwijk"
+
+RUN apt-get update && \
+    apt-get install -y net-tools dnsutils
+
+COPY html /usr/share/nginx/html
+
+VOLUME /usr/share/nginx/html
+
+EXPOSE 80
+			</pre>
+			De manifests worden verder voorzien van liveness- en readinessProbes, resourceLimits voor CPU en Memory en uiteraard een TCP port. Het volume blijft read-only zodat wijzigingen uitsluitend gedaan worden door een commit/push van de html-repo.
+			<pre>## END: voor de technische lezer ##</pre>
+
+		</p>
+</body>
+</html>
+

@@ -83,6 +83,4 @@ spec:
           readOnly: true
       volumes:
       - name: html
-        #emptyDir: {}
-        persistentVolumeClaim:
-          claimName: nfs
+        emptyDir: {}

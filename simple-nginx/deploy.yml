@@ -26,22 +26,22 @@ spec:
         app: simple-nginx
       name: simple-nginx
     spec:
+      # initContainers:
+      # - name: git-clone
+      #   image: nokkie/alpinegit:arm64
+      #   args:
+      #   - git 
+      #   - clone
+      #   - https://gitlab.digitalinfo.nl/generic/simple-html.git
+      #   - /usr/share/nginx/html
+      #   securityContext:
+      #     runAsUser: 1 
+      #     allowPrivilegeEscalation: false
+      #     readOnlyRootFilesystem: true
+      #   volumeMounts:
+      #     - name: html
+      #       mountPath: /usr/share/nginx/html
       containers:
-      - name: git-clone
-        image: nokkie/alpinegit:arm64
-        args:
-        - git 
-        - clone
-        - https://gitlab.digitalinfo.nl/generic/simple-html.git
-        - /usr/share/nginx/html
-        securityContext:
-          runAsUser: 1 
-          allowPrivilegeEscalation: false
-          readOnlyRootFilesystem: true
-        volumeMounts:
-          - name: html
-            mountPath: /usr/share/nginx/html
-      #containers:
       - image: nokkie/simple-nginx:stable
         imagePullPolicy: Always
         livenessProbe:
